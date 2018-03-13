@@ -1,0 +1,58 @@
+scss_files: 'app/assets/**/*.scss'
+
+# ----------------------------------------------
+# https://github.com/airbnb/css/blob/master/.scss-lint.yml
+# Airbnb CSS / Sass Styleguide
+#
+# extend default.yml
+# <pre>All configurations extend the default configuration.</pre>
+# @see https://github.com/brigade/scss-lint#configuration
+# @see https://github.com/brigade/scss-lint/blob/master/config/default.yml
+#
+# ----------------------------------------------
+severity: error
+
+linters:
+
+  BorderZero:
+    enabled: true
+    convention: zero
+
+  BemDepth:
+    enabled: true
+
+  DeclarationOrder:
+    enabled: false
+
+  ExtendDirective:
+    enabled: true
+
+  LeadingZero:
+    enabled: false
+
+  NameFormat:
+    enabled: true
+
+  PrivateNamingConvention:
+    enabled: true
+    prefix: _
+
+  PropertySortOrder:
+    enabled: false
+
+  QualifyingElement:
+    enabled: false
+
+  SelectorFormat:
+    enabled: true
+    convention: hyphenated_BEM
+    class_convention: ^(?!js-).*
+    class_convention_explanation: should not be written in the form js-*
+
+  SingleLinePerProperty:
+    enabled: true
+    allow_single_line_rule_sets: false
+
+  StringQuotes:
+    enabled: true
+    style: double_quotes

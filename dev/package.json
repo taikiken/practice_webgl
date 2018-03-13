@@ -1,0 +1,109 @@
+{
+  "name": "gulp-runner-2017",
+  "version": "0.2.0",
+  "description": "Yarn + Babel(ES2017) + Airbnb Style Guide + SCSS Lint",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp serve:app",
+    "serve": "npm run git:hash gulp serve",
+    "build": "NODE_ENV=production npm run git:hash gulp",
+    "dev": "npm run git:hash gulp dev",
+    "init": "npm install && cd ./bower && bower install && cd ../ && gulp bower:exports",
+    "esdoc": "cd ./babels && esdoc -c esdoc.json",
+    "git:hash": "GIT_COMMIT_HASH=$(git rev-parse HEAD)",
+    "git:tagname": "GIT_LATEST_TAGNAME=$(git describe --abbrev=0)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/paratroops/gulp_template.git"
+  },
+  "keywords": [
+    "ES2015, HTML5, CSS3"
+  ],
+  "author": "@taikiken",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "bower": "^1.8.2",
+    "browser-sync": "^2.18.13",
+    "connect-ssi": "^1.1.1",
+    "core-js": "^2.5.1",
+    "del": "^3.0.0",
+    "esdoc": "^1.0.3",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-flow-type-plugin": "^1.0.1",
+    "esdoc-jsx-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^4.7.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "^7.3.0",
+    "gsap": "^1.20.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-debug": "^3.1.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace-task": "^0.11.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-scss-lint": "^0.5.0",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-strip-comments": "^2.5.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp.spritesmith": "^6.5.1",
+    "imagemin-pngquant": "^5.0.1",
+    "merge-stream": "^1.0.1",
+    "promise-polyfill": "^6.0.2",
+    "require-dir": "^0.3.2",
+    "run-sequence": "^2.2.0",
+    "uglifyjs-webpack-plugin": "^1.2.3",
+    "webpack": "^4.1.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current",
+            "browsers": [
+              "last 2 versions",
+              "Safari >= 10",
+              "Explorer >= 11",
+              "last 4 Edge versions",
+              "ChromeAndroid >= 18.0",
+              "Android >= 5.0",
+              "iOS >= 10.0"
+            ]
+          },
+          "useBuiltIns": true
+        }
+      ]
+    ],
+    "ignore": [
+      "node_modules"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  }
+}
